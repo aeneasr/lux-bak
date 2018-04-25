@@ -20,6 +20,7 @@ func startServer() {
 	router := httprouter.New()
 	router.GET("/api", handleApiCall)
 
+
 	c := cors.Default().Handler(router)
 
 	if err := http.ListenAndServe(":3001", c); err != nil {
